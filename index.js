@@ -1,7 +1,8 @@
+import 'dotenv/config'
 import express from "express"
 
 const app = express()
-const port=3000
+const port= process.env.PORT||3000
 
 app.use(express.json())
 
@@ -18,7 +19,7 @@ app.post('/teas',(req,res)=>{
 
 // get all tea
 app.get("/teas",(req,res)=>{
-    res.status(200).send(teaData)
+    res.status(200).send(teaData) 
 })
 
 // get a tea with id
